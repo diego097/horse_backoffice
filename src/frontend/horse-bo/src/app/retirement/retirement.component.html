@@ -1,0 +1,168 @@
+<!-- Content Wrapper. Contains page content -->
+
+<section class="bg-init px-5 pb-5">
+  <div class="content-header px-0">
+    <div class="container-fluid px-0">
+      <div class="row mb-2">
+        <div class="col-12 col-sm-3">
+          <div class="d-flex mb-3">
+            <input class="form-control mr-3" type="date" name="" id="" />
+            <button class="btn btn-color-search">Actualizar</button>
+          </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-12 col-sm-5">
+          <div class="d-flex d-flex-movil">
+            <input
+              class="form-control mr-3 w-50"
+              type="text"
+              name=""
+              id=""
+              placeholder="Hipodromo"
+            />
+            <button class="btn btn-color-search">Buscar</button>
+            <button class="btn btn-retire w-10">
+              <img class="img-fluid" src="./assets/img/hors3.png" alt="" />
+            </button>
+            <button class="btn btn-retire ml-0 w-10">
+              <img class="img-fluid" src="./assets/img/grey.png" alt="" />
+            </button>
+            <button class="btn btn-retire ml-0 w-10">
+              <img class="img-fluid" src="./assets/img/harness.png" alt="" />
+            </button>
+            <button class="btn btn-flag ml-0 w-10">
+              <img class="img-fluid" src="./assets/img/flag.png" alt="" />
+              <div><i class="fas fa-sort-down"></i></div>
+              <select class="form-control btn-select-retiret" name="" id="">
+                <option value="">algo?</option>
+              </select>
+            </button>
+          </div>
+        </div>
+        <div class="col-12 col-sm-7 text-right">
+          <div class="hipodromo-title">
+            <p class="m-0">Hipódromo {{selectedHipName}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="row">
+      <div class="col-12 col-sm-7">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="table-head-hip">
+              <tr>
+                <th scope="col">Hipódromos</th>
+                <th scope="col">País</th>
+                <th scope="col">Carrera</th>
+                <th scope="col">Fecha</th>
+                <th class="text-doble" scope="col">
+                  Apertura<br />de carreras
+                </th>
+                <th class="text-doble" scope="col">Cerrar<br />Hípodromo</th>
+                <th class="text-doble" scope="col">Agregar<br />W/P/S</th>
+                <th class="text-doble" scope="col">Cierre<br />de Carrera</th>
+                <th class="text-doble" scope="col">Ver<br />Caballos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let hip of hipodromos" class="table-retiret">
+                <td>{{ hip.id }} {{ hip.nombre }}</td>
+                <td>{{ hip.pais }}</td>
+                <td>
+                  <select class="" aria-label="form-select-lg example" id="carreras{{hip.id}}" name="carreras{{hip.id}}" [(ngModel)]="carrera">
+                    <option value="">Seleccionar</option>
+                    <option *ngFor="let carr of hip.crr" value="{{ carr }}">
+                      {{ carr }}
+                    </option>
+                  </select>
+                </td>
+                <td>{{ hip.fecha }}</td>
+                <td>
+                  <div class="btn-table-retiret">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/green.png"
+                      alt=""
+                    />
+                  </div>
+                </td>
+                <td>
+                  <div class="btn-table-retiret">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/redclok.png"
+                      alt=""
+                    />
+                  </div>
+                </td>
+                <td>
+                  <div class="btn-table-retiret">
+                    <img class="img-fluid" src="./assets/img/plus.png" alt="" />
+                  </div>
+                </td>
+                <td>
+                  <div class="btn-table-retiret">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/prohibited.png"
+                      alt=""
+                    />
+                  </div>
+                </td>
+                <td><button type="submit" class="btn btn-primary" (click)="listHorses(carrera[0], hip)">Detalle</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-12 col-sm-5">
+        <div class="table-title">
+          <p class="m-0">Carrera {{selectedCarrNumber}} - Hipódromo {{selectedHipName}}</p>
+        </div>
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="table-head-hip">
+              <tr>
+                <th scope="col">NP</th>
+                <th scope="col">NPS</th>
+                <th scope="col">ML</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">WIN</th>
+                <th scope="col">PLACE</th>
+                <th scope="col">SHOW</th>
+                <th scope="col">Opciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor ="let horse of horsesByRace" class="table-retiret">
+                <td>{{horse.np}}</td>
+                <td>{{horse.nps}}</td>
+                <td>{{horse.ml}}</td>
+                <td>{{horse.cnombre}}</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>
+                  <button class="btn btn-danger" style="float: left">
+                    RETIRAR
+                  </button>
+                  <div class="btn-table-retiret">
+                    <img
+                      class="img-fluid"
+                      src="./assets/img/green.png"
+                      alt=""
+                    />
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /.content-wrapper -->

@@ -1,0 +1,678 @@
+<section class="bg-init px-5 pb-5">
+    <div class="content-header px-0">
+      <div class="container-fluid px-0">
+        <div class="row mb-2">
+          <div class="col-12 col-sm-4" style="background: #dddee0;">
+            <div class="row">
+              <div class="col-12">
+                <div class="d-flex mb-3">
+                  <input class="form-control mr-3" type="date" name="fecha" id="fecha" [(ngModel)]="fecha"/>
+                  <button class="btn btn-color-search" (click)="listBy('all');">Actualizar</button>
+                </div>
+              </div>
+              <div class="w-100"></div>
+              <div class="col-12">
+                <div class="d-flex d-flex-movil">
+                  <input class="form-control mr-3 w-50" type="text" name="" id="" placeholder="Hipodromo">
+                  <button class="btn btn-color-search">Buscar</button>
+                  <button class="btn btn-retire w-10"><img class="img-fluid" src="./assets/img/hors3.png" alt="" (click)="listBy('horse');"></button>
+                  <button class="btn btn-retire ml-0 w-10"><img class="img-fluid" src="./assets/img/grey.png" alt="" (click)="listBy('galgo');"></button>
+                  <button class="btn btn-retire ml-0 w-10"><img class="img-fluid" src="./assets/img/harness.png" alt="" (click)="listBy('carreta');"></button>
+                  <button class="btn btn-flag ml-0 w-10">
+                    <img class="img-fluid" src="./assets/img/flag.png" alt="">
+                    <div><i class="fas fa-sort-down"></i></div>
+                    <select class="form-control btn-select-retiret" name="" id="">
+                      <option value="">algo?</option>
+                    </select>
+                  </button>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="table-responsive">
+                  <table id="hipList" class="table hover nowrap table-striped">
+                    <thead class="table-head-hip">
+                      <tr>
+                        <th scope="col">Hipódromos</th>
+                        <th scope="col">Premiadas</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">País</th>
+                        <th scope="col">Carreras</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let hip of __hipodromos" class="table-retiret">
+                        <td>{{hip.id}} {{hip.nombre_pista}}</td>
+                        <td><button class="btn btn-light">5</button></td>
+                        <td *ngIf="hip.tipo == 1"><div class="btn-table-retiret"><img class="img-fluid" src="./assets/img/horse.png" alt="Caballos"></div></td>
+                        <td *ngIf="hip.tipo == 2"><div title="Carretas" class="btn-table-retiret"><img class="img-fluid" src="./assets/img/harness.png" ></div></td>
+                        <td *ngIf="hip.tipo == 3"><div class="btn-table-retiret"><img class="img-fluid" src="./assets/img/grey.png" alt=""></div></td>
+                        <td>{{hip.pais}}</td>
+                        <td><button class="btn btn-light">"1"</button><button class="btn btn-light"><i class="fas fa-handshake"></i></button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-8">
+            <div class="row">
+              <div class="col-12 text-right">
+                <div class="hipodromo-title">
+                  <p class="m-0">Hipódromo Albury</p>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="card">
+                  <div class="table-responsive">
+                    <table class="table mb-0">
+                      <tbody>
+                        <tr>
+                          <td><div class="btn-table-retiret"><img class="img-fluid" src="./assets/img/horse.png" alt=""></div></td>
+                          <td>208 Albury</td>
+                          <td>AUS</td>
+                          <td>FECHA 04/02/2022</td>
+                          <td class="text-right">Hora de premiación: 04/08/2022</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <table class="table table-striped">
+                      <thead class="table-head-hip">
+                        <tr>
+                          <th scope="col">Carreras <button class="btn btn-light">5</button></th>
+                          <th scope="col">Pos @04:19:00</th>
+                          <th scope="col"></th>
+                          <th scope="col">WIN</th>
+                          <th scope="col">PLACE</th>
+                          <th scope="col">SHOW</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="table-retiret">
+                          <td>1</td>
+                          <td>texto 1 asdasdasdsad</td>
+                          <td></td>
+                          <td>1.7</td>
+                          <td>2.8</td>
+                          <td>0</td>
+                        </tr>
+                        <tr class="table-retiret">
+                          <td>2</td>
+                          <td>texto 1 asdasdasdsad</td>
+                          <td></td>
+                          <td>1.7</td>
+                          <td>2.8</td>
+                          <td>0</td>
+                        </tr>
+                        <tr class="table-retiret">
+                          <td>3</td>
+                          <td>texto 1 asdasdasdsad</td>
+                          <td></td>
+                          <td>1.7</td>
+                          <td>2.8</td>
+                          <td>0</td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <td>1.00 Trifecta (11-10-6)<br>PAGADO:211.80</td>
+                          <td>1.00 Trifecta (11-10-6)<br>PAGADO:211.80</td>
+                          <td>1.00 Trifecta (11-10-6)<br>PAGADO:211.80</td>
+                          <td>1.00 Trifecta (11-10-6)<br>PAGADO:211.80</td>
+                          <td>1.00 Trifecta (11-10-6)<br>PAGADO:211.80</td>
+                          <td>1.00 Trifecta (11-10-6)<br>PAGADO:211.80</td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </div>
+                <!-- primera tabla  -->
+                <div class="card">
+                  <ul class="list-group list-group-horizontal listo-bg">
+                    <li class="list-group-item listo-li">Carrera</li>
+                    <li class="list-group-item listo-li text-center">Win</li>
+                    <li class="list-group-item listo-li text-center">Place</li>
+                    <li class="list-group-item listo-li text-center">Show</li>
+                  </ul>
+                  <div id="">
+                    <ul class="list-group list-group-horizontal">
+                      <li class="list-group-item w-100"><button class="btn btn-dark">1</button> 1 She Wolf</li>
+                      <li class="list-group-item w-100 text-center">1.3</li>
+                      <li class="list-group-item w-100 text-center">2.7</li>
+                      <li class="list-group-item w-100 text-center">0</li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal">
+                      <li class="list-group-item w-100"><button class="btn btn-dark">1</button> 1 She Wolf</li>
+                      <li class="list-group-item w-100 text-center">1.3</li>
+                      <li class="list-group-item w-100 text-center">2.7</li>
+                      <li class="list-group-item w-100 text-center">0</li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal">
+                      <li class="list-group-item w-100"><button class="btn btn-dark">1</button> 1 She Wolf</li>
+                      <li class="list-group-item w-100 text-center">1.3</li>
+                      <li class="list-group-item w-100 text-center">2.7</li>
+                      <li class="list-group-item w-100 text-center">0</li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal">
+                      <li class="list-group-item w-100"><button class="btn btn-dark">1</button> 1 She Wolf</li>
+                      <li class="list-group-item w-100 text-center">1.3</li>
+                      <li class="list-group-item w-100 text-center">2.7</li>
+                      <li class="list-group-item w-100 text-center">0</li>
+                    </ul>
+                    <div class="text-center my-3">
+                      <button class="btn btn-success">PREMIAR</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- exacta tabla  -->
+                <div class="card list-card">
+                  <div class="d-flex">
+                    <div class="alert list-alert-title list-alert-bg1">
+                      EXACTA
+                    </div>
+                    <button class="btn btn-success">PREMIAR</button>
+                  </div>
+                  <div>
+                    <ul class="list-group list-group-horizontal">
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Caballos</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="#EXACTA" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Base P.</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Dividendo</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal">
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Caballos</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="#EXACTA" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Base P.</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Dividendo</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal">
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Caballos</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="#EXACTA" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Base P.</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Dividendo</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- trifecta tabla  -->
+                <div class="card list-card">
+                  <div class="d-flex">
+                    <div class="alert list-alert-title list-alert-bg2">
+                      TRIFECTA
+                    </div>
+                    <button class="btn btn-success">PREMIAR</button>
+                  </div>
+                  <div>
+                    <ul class="list-group list-group-horizontal">
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Caballos</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="#EXACTA" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Base P.</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Dividendo</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal">
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Caballos</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="#EXACTA" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Base P.</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Dividendo</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal">
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Caballos</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="#EXACTA" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Base P.</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Dividendo</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- superfecta tabla  -->
+                <div class="card list-card">
+                  <div class="d-flex">
+                    <div class="alert list-alert-title list-alert-bg3">
+                      SUPERFECTA
+                    </div>
+                    <button class="btn btn-success">PREMIAR</button>
+                  </div>
+                  <div>
+                    <ul class="list-group list-group-horizontal">
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Caballos</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="#EXACTA" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Base P.</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Dividendo</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal">
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Caballos</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="#EXACTA" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Base P.</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Dividendo</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal">
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Caballos</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="#EXACTA" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Base P.</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Dividendo</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- pick2 tabla  -->
+                <div class="pb-3">
+                  <div class="d-flex">
+                    <div class="alert list-alert-title list-alert-bg4">
+                      PICK 2
+                    </div>
+                    <button class="btn btn-success">PREMIAR</button>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">#Carrera</th>
+                          <th class="text-center" scope="col">#Caballo</th>
+                          <th class="text-center" scope="col">Base de Pago</th>
+                          <th class="text-center" scope="col">Dividendo</th>
+                          <th class="text-center" scope="col">Opción</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1 @2</td>
+                          <td><input type="text" class="form-control" placeholder="#EXACTA" ></td>
+                          <td><input type="text" class="form-control" placeholder="#EXACTA" ></td>
+                          <td><input type="text" class="form-control" placeholder="#EXACTA" ></td>
+                          <td class="text-center"><button class="btn btn-light text-center"> Resultado 1</button></td>
+                        </tr>
+                        <tr >
+                          <td>1 @2</td>
+                          <td><input type="text" class="form-control" placeholder="#EXACTA" ></td>
+                          <td><input type="text" class="form-control" placeholder="#EXACTA" ></td>
+                          <td><input type="text" class="form-control" placeholder="#EXACTA" ></td>
+                          <td class="text-center"><button class="btn btn-light">Resultado 1</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- pick3 tabla  -->
+                <div class="pb-3">
+                  <div class="d-flex">
+                    <div class="alert list-alert-title list-alert-bg5">
+                      PICK 3
+                    </div>
+                    <button class="btn btn-success">PREMIAR</button>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">#Carrera</th>
+                          <th class="text-center" scope="col">#Caballo</th>
+                          <th class="text-center" scope="col">Base de Pago</th>
+                          <th class="text-center" scope="col">Dividendo</th>
+                          <th class="text-center" scope="col">Opción</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1 @2</td>
+                          <td><input type="text" class="form-control" placeholder="#EXACTA" ></td>
+                          <td><input type="text" class="form-control" placeholder="#EXACTA" ></td>
+                          <td><input type="text" class="form-control" placeholder="#EXACTA" ></td>
+                          <td class="text-center"><button class="btn btn-secundary">Resultado 1</button></td>
+                        </tr>
+                        <tr >
+                          <td>1 @2</td>
+                          <td><input type="text" class="form-control" placeholder="#EXACTA" ></td>
+                          <td><input type="text" class="form-control" placeholder="#EXACTA" ></td>
+                          <td><input type="text" class="form-control" placeholder="#EXACTA" ></td>
+                          <td class="text-center"><button class="btn btn-secundary">Resultado 1</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- pick4 tabla  -->
+                <div class="pb-3">
+                  <div class="d-flex">
+                    <div class="alert list-alert-title list-alert-bg6">
+                      PICK 4
+                    </div>
+                    <button class="btn btn-success">PREMIAR</button>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">#Carrera</th>
+                          <th class="text-center" scope="col">#Caballo</th>
+                          <th class="text-center" scope="col">Base de Pago</th>
+                          <th class="text-center" scope="col">Dividendo</th>
+                          <th class="text-center" scope="col">Opción</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1 @2</td>
+                          <td><input type="text" class="form-control" placeholder="#EXACTA" ></td>
+                          <td><input type="text" class="form-control" placeholder="#EXACTA" ></td>
+                          <td><input type="text" class="form-control" placeholder="#EXACTA" ></td>
+                          <td class="text-center"><button class="btn btn-secundary">Resultado 1</button></td>
+                        </tr>
+                        <tr >
+                          <td>1 @2</td>
+                          <td><input type="text" class="form-control" placeholder="#EXACTA" ></td>
+                          <td><input type="text" class="form-control" placeholder="#EXACTA" ></td>
+                          <td><input type="text" class="form-control" placeholder="#EXACTA" ></td>
+                          <td class="text-center"><button class="btn btn-secundary">Resultado 1</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- cuota fija tabla  -->
+                <div class="pb-3">
+                  <div class="d-flex">
+                    <div class="alert list-alert-title list-alert-bg7">
+                      CUOTA FIJA
+                    </div>
+                    <button class="btn btn-success">PREMIAR</button>
+                  </div>
+                  <div>
+                    <ul class="list-group list-group-horizontal">
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">1ro</span>
+                          </div>
+                          <select class="form-control" name="" id="">
+                            <option value="" selected>Seleccione</option>
+                          </select>
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">2do</span>
+                          </div>
+                          <select class="form-control" name="" id="">
+                            <option value="" selected>Seleccione</option>
+                          </select>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- quiniela tabla  -->
+                <div class="card">
+                  <div class="d-flex">
+                    <div class="alert list-alert-title list-alert-bg8">
+                      QUINIELA
+                    </div>
+                    <button class="btn btn-success">PREMIAR</button>
+                  </div>
+                  <div class="card list-card">
+                    <ul class="list-group list-group-horizontal">
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Caballos</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="#EXACTA" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Base P.</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Dividendo</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal">
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Caballos</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="#EXACTA" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Base P.</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Dividendo</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="list-group list-group-horizontal">
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Caballos</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="#EXACTA" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Base P.</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                      <li class="list-group-item w-100">
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Dividendo</span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="0" >
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>

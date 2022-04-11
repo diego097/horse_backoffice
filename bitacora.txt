@@ -1,0 +1,6 @@
+En la ruta raiz se encuentra el backend en Node 
+ejecutar npm run dev para levantar el servidor
+
+El front se encuentra en la carpeta /src/frontend/horse_bo
+ejecutar npm start para levantar el fornt
+

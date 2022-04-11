@@ -1,0 +1,241 @@
+
+.nav-init-bg1{
+    background: #00a755;
+}
+.nav-init-bg2{
+    background: #e6214c;
+}
+.nav-init-bg3{
+    background: linear-gradient(45deg, #1d3c6a, #055f92);
+}
+.nav-title{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+.nav-username{
+    margin: 0;
+    color: black;
+    border-radius: 10px 10px 0 0;
+    background: #e9e9e9;
+    padding: 0 1rem;
+    margin-right: 1rem;
+}
+.nav-name {
+    margin: 0;
+    color: white;
+    background: #7f8891;
+    padding: 0 1rem;
+    padding-right: 2rem;
+    margin-right: 1rem;
+    text-align: right;
+}
+.nav-iconuser{
+    position: absolute;
+    right: 4px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    top: 0px;
+    font-size: 1.5rem;
+    background: #e9e9e9;
+    border-radius: 50%;
+    padding: 0rem;
+    color: #7f8891;
+    border: 1px solid #7f8891;
+    outline: 2px solid #e9e9e9;
+    cursor: pointer;
+}
+
+.nav-flex-minwidth{
+    flex-direction: column;
+    min-width: 12rem;
+}
+.nav-exit{
+    color: white;
+    font-size: 1.2rem;
+    padding: 0 1.5rem;
+    padding-right: 0;
+}
+.bg-init{
+    background:#ececec;
+}
+.border-b{
+    border-bottom: 0px!important;
+}
+.btn-color-search{
+    background: linear-gradient(to top, #00e575,#00a755, #9ee3c1)!important;
+    min-width: 130px;
+    font-weight: bold;
+    border-radius: 10px!important;
+    border: 2px solid #00a755!important;
+    color: white;
+}
+.w-80{
+    width: 80%;
+}
+.w-50{
+    width: 50%;
+}
+.w-10{
+    width: 10%;
+}
+.btn-retire{
+    background: linear-gradient(45deg, #6a6e71, #626262);
+    padding: 0rem 0.5rem;
+    margin: 0 0.5rem;
+}
+.btn-retire img , .btn-flag img{
+    max-width: 35px;
+    max-height: 35px;
+}
+.btn-flag{
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to top, #0699db, #007eb6, #0699db);
+    position: relative;
+    border: 2px solid #007eb6;
+    color: white!important;
+    padding: 0rem 0.5rem;
+    margin: 0 0.5rem;
+}
+.btn-select-retiret{
+    left: 0;
+    top: 0;
+    opacity: 0;
+    position: absolute;
+}
+.hipodromo-title{
+    background: url("../img/bannertitle.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #4d4d4e;
+}
+.table-head-hip{
+    background: linear-gradient(45deg, #6a6e71, #626262);
+    color: white;
+}
+.table-head-hip tr th{
+    padding: 0.2rem 0;
+    text-align: center;
+    vertical-align: middle;
+}
+.text-doble{
+    font-size: 12px;
+    font-weight: 500;
+}
+.btn-table-retiret{
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+}
+.btn-table-retiret img{
+    width: 30px;
+    height: 30px;
+}
+.table-retiret{
+    font-size: 14px;
+    text-align: center;
+    color: #4d4d4e;
+}
+.table-retiret td{
+    padding: 0.2rem 0;
+    vertical-align: middle;
+}
+.table-title{
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: linear-gradient(45deg, #6a6e71, #626262);
+    color: white;
+    padding: 0.45rem 0.6rem;
+}
+.listo-bg{
+    background: #9abfd1;
+    font-weight: bold;
+}
+.listo-li{
+    width: 100%;
+    border: 0px;
+}
+.listo-bg .list-group-item{
+    background: #9abfd1;
+}
+.list-alert-title{
+    margin: 0;
+    margin-right: 1rem;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+}
+.input-group-text{
+    background: #6a6e71!important;
+    font-weight: bold;
+    color: white;
+}
+.list-alert-bg1{
+    background: #f28a8b;
+}
+.list-alert-bg2{
+    background: #5bc9ca;
+}
+.list-alert-bg3{
+    background: #b8cc86;
+}
+.list-alert-bg4{
+    background: #f0b589;
+}
+.list-alert-bg5{
+    background: #7fbbf2;
+}
+.list-alert-bg6{
+    background: #76d1a8;
+}
+.list-alert-bg7{
+    background: #e19edc;
+}
+.list-alert-bg8{
+    background: #b48bce;
+}
+.no-desktop{
+    display: block;
+}
+.list-pro{
+    flex-direction: row;
+}
+@media (max-width: 767.98px){
+    .no-movil{
+        display: none!important;
+    }
+    .btn-color-search-m{
+        margin-top: 1rem;
+    }
+    .list-card{
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+    .list-pro{
+        
+        width: 100%;
+        white-space: nowrap;
+    }
+    .list-pro li{
+        width: 100%;
+    }
+    .bg-init.px-5{
+        padding-left: 1rem!important;
+        padding-right: 1rem!important;
+    }
+    .d-flex-movil{
+        flex-wrap: wrap;
+    }
+    .d-flex-movil .btn-retire , .d-flex-movil .btn-flag {
+        width: 30%;
+        margin-top: 1rem;
+    }
+}
+    
